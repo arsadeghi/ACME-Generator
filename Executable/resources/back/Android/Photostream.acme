@@ -1,0 +1,113 @@
+import families/Android.acme;
+system Photostream : Android = new Android extended with {
+  component BootReceiver : BroadcastReceiverComponentT = new BroadcastReceiverComponentT extended with {
+     port Response : ExplicitIntentCallPortT = new ExplicitIntentCallPortT extended with {
+        property componentReference = "CheckUpdateService";
+     };
+     port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+     property class = "BootReceiver";
+     property intentFilters = {
+        "android.intent.action.BOOT_COMPLETED"
+
+    };
+    property exported = true;
+     };
+    component CheckUpdateService : ServiceComponentT = new ServiceComponentT extended with {
+       port Request : ExplicitIntentResponsePortT = new ExplicitIntentResponsePortT;
+       port ResponsePortT0 : ExplicitIntentResponsePortT = new ExplicitIntentResponsePortT;
+       property class = "CheckUpdateService";
+       property exported = false;
+       property intentFilters = {
+       };
+
+    };
+    component PhotostreamActivity : ActivityComponentT = new ActivityComponentT extended with {
+       port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+       port ImplicitIntentBroadcastAnnouncerPortT0 : ImplicitIntentBroadcastAnnouncerPortT = new ImplicitIntentBroadcastAnnouncerPortT extended with {
+          property action = "com.google.android.photostream.FLICKR_PHOTO";
+       };
+       property state = Created;
+       property class = "PhotostreamActivity";
+       property intentFilters = {
+          "com.google.android.photostream.FLICKR_STREAM", "android.intent.action.VIEW" };
+          property exported = true;
+
+    };
+    component LoginActivity : ActivityComponentT = new ActivityComponentT extended with {
+       port ExplicitIntentCallPortT0 : ExplicitIntentCallPortT = new ExplicitIntentCallPortT extended with {
+          property componentReference = "SettingsActivity";
+       };
+       port RequestPortT0 : ExplicitIntentCallPortT = new ExplicitIntentCallPortT extended with {
+          property componentReference = "CheckUpdateService";
+       };
+       port ImplicitIntentBroadcastAnnouncerPortT0 : ImplicitIntentBroadcastAnnouncerPortT = new ImplicitIntentBroadcastAnnouncerPortT extended with {
+          property action = "com.google.android.photostream.FLICKR_STREAM";
+       };
+       property state = Created;
+       property class = "LoginActivity";
+       property intentFilters = {
+          "android.intent.action.MAIN", "android.intent.action.SET_WALLPAPER", "android.intent.action.CREATE_SHORTCUT" };
+          property exported = true;
+
+    };
+    component ViewPhotoActivity : ActivityComponentT = new ActivityComponentT extended with {
+       port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+       property state = Created;
+       property class = "ViewPhotoActivity";
+       property intentFilters = {
+       "com.google.android.photostream.FLICKR_PHOTO" };
+          property exported = true;
+
+        rule activityStateValid = invariant hasValue(state);
+
+    };
+    component SettingsActivity : ActivityComponentT = new ActivityComponentT extended with {
+       port ExplicitIntentResponsePortT0 : ExplicitIntentResponsePortT = new ExplicitIntentResponsePortT;
+       property state = Created;
+       property class = "SettingsActivity";
+       property intentFilters = {
+       };
+        rule activityStateValid = invariant hasValue(state);
+
+    };
+    connector ExplicitIntent : IntentCallResponseConnectorT = new IntentCallResponseConnectorT extended with {
+       role ExplicitIntentCallRoleT0 : ExplicitIntentCallRoleT = new ExplicitIntentCallRoleT;
+       role ExplicitIntentResponseRoleT0 : ExplicitIntentResponseRoleT = new ExplicitIntentResponseRoleT;
+
+    };
+    connector IntentCallResponseConnectorT0 : IntentCallResponseConnectorT = new IntentCallResponseConnectorT extended with {
+       role ExplicitIntentCallRoleT0 : ExplicitIntentCallRoleT = new ExplicitIntentCallRoleT;
+       role ExplicitIntentResponseRoleT0 : ExplicitIntentResponseRoleT = new ExplicitIntentResponseRoleT;
+       property pending = true;
+
+    };
+    connector IntentCallResponseConnectorT1 : IntentCallResponseConnectorT = new IntentCallResponseConnectorT extended with {
+       role ExplicitIntentCallRoleT0 : ExplicitIntentCallRoleT = new ExplicitIntentCallRoleT;
+       role ExplicitIntentResponseRoleT0 : ExplicitIntentResponseRoleT = new ExplicitIntentResponseRoleT;
+       property pending = true;
+
+    };
+    connector ImplicitIntentBus = {
+       role ImplicitIntentBroadcastReceiveRoleT0 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+       role ImplicitIntentBroadcastAnnounceRoleT0 : ImplicitIntentBroadcastAnnounceRoleT = new ImplicitIntentBroadcastAnnounceRoleT;
+       role ImplicitIntentBroadcastReceiveRoleT1 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+       role ImplicitIntentBroadcastAnnounceRoleT1 : ImplicitIntentBroadcastAnnounceRoleT = new ImplicitIntentBroadcastAnnounceRoleT;
+       role r_ImplicitIntentBroadcastReceiveRoleT : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+    };
+    attachment LoginActivity.ExplicitIntentCallPortT0 to ExplicitIntent.ExplicitIntentCallRoleT0;
+    attachment SettingsActivity.ExplicitIntentResponsePortT0 to ExplicitIntent.ExplicitIntentResponseRoleT0;
+    attachment BootReceiver.Response to IntentCallResponseConnectorT0.ExplicitIntentCallRoleT0;
+    attachment CheckUpdateService.Request to IntentCallResponseConnectorT0.ExplicitIntentResponseRoleT0;
+    attachment LoginActivity.RequestPortT0 to IntentCallResponseConnectorT1.ExplicitIntentCallRoleT0;
+    attachment CheckUpdateService.ResponsePortT0 to IntentCallResponseConnectorT1.ExplicitIntentResponseRoleT0;
+    attachment PhotostreamActivity.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.ImplicitIntentBroadcastReceiveRoleT0;
+    attachment PhotostreamActivity.ImplicitIntentBroadcastAnnouncerPortT0 to ImplicitIntentBus.ImplicitIntentBroadcastAnnounceRoleT0;
+    attachment ViewPhotoActivity.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.ImplicitIntentBroadcastReceiveRoleT1;
+    attachment LoginActivity.ImplicitIntentBroadcastAnnouncerPortT0 to ImplicitIntentBus.ImplicitIntentBroadcastAnnounceRoleT1;
+    attachment BootReceiver.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.r_ImplicitIntentBroadcastReceiveRoleT;
+    group PhotoStream : AndroidApplicationGroupT = new AndroidApplicationGroupT extended with {
+       property usesPermissions U= {
+          "android.permission.INTERNET", "android.permission.RECEIVE_BOOT_COMPLETED", "android.permission.SET_WALLPAPER", "android.permission.VIBRATE" };
+       members {
+          BootReceiver, CheckUpdateService, LoginActivity, SettingsActivity, ViewPhotoActivity, PhotostreamActivity } };
+}

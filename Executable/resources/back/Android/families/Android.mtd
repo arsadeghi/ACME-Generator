@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AcmeModel>
+  <family name="Android">
+    <userdata key="SaveData">
+      <data date="2/11/15 8:42 AM"/>
+    </userdata>
+    <userdata key="connection-patterns">
+      <data>
+        <portConnectionRule connector="IntentBusT" name="">
+          <association componentType="Component" portName="p_ImplicitIntentBroadcastAnnouncerPortT" portType="ImplicitIntentBroadcastAnnouncerPortT" roleName="r_ImplicitIntentBroadcastAnnounceRoleT" roleType="ImplicitIntentBroadcastAnnounceRoleT"/>
+          <association componentType="Component" portName="p_ImplicitIntentBroadcastReceivePortT" portType="ImplicitIntentBroadcastReceivePortT" roleName="r_ImplicitIntentBroadcastReceiveRoleT" roleType="ImplicitIntentBroadcastReceiveRoleT"/>
+        </portConnectionRule>
+        <portConnectionRule connector="IntentBusT" name="">
+          <association componentType="Component" portName="p_ImplicitIntentBroadcastReceivePortT" portType="ImplicitIntentBroadcastReceivePortT" roleName="r_ImplicitIntentBroadcastReceiveRoleT" roleType="ImplicitIntentBroadcastReceiveRoleT"/>
+          <association componentType="Component" portName="p_ImplicitIntentBroadcastAnnouncerPortT" portType="ImplicitIntentBroadcastAnnouncerPortT" roleName="r_ImplicitIntentBroadcastAnnounceRoleT" roleType="ImplicitIntentBroadcastAnnounceRoleT"/>
+        </portConnectionRule>
+      </data>
+    </userdata>
+    <port-type name="ExplicitIntentResponsePortT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="PORT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.flowchart.OffCardConnector">
+              <fillColor blue="0" green="128" red="0"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <extras>
+              <attribute key="ADJUSTMENT" type="int" val="39"/>
+            </extras>
+            <rotateAroundComponentCenter on="true"/>
+            <alignWithAttachedRole on="true"/>
+            <pointer orientation="In"/>
+          </visualization>
+        </data>
+      </userdata>
+    </port-type>
+    <port-type name="ImplicitIntentBroadcastAnnouncerPortT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="PORT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.flowchart.Delay">
+              <fillColor blue="156" green="164" red="227"/>
+              <outlineColor blue="0" green="0" red="0"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <rotateAroundComponentCenter on="true"/>
+            <alignWithAttachedRole on="true"/>
+            <pointer orientation="Out"/>
+          </visualization>
+        </data>
+      </userdata>
+    </port-type>
+    <port-type name="ExplicitIntentCallPortT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="PORT">
+            <shape direction="West" visualizationStrategyKey="org.acmestudio.ui.flowchart.OffCardConnector"/>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <extras>
+              <attribute key="ADJUSTMENT" type="int" val="63"/>
+            </extras>
+            <rotateAroundComponentCenter on="true"/>
+            <alignWithAttachedRole on="true"/>
+            <pointer orientation="Out"/>
+          </visualization>
+        </data>
+      </userdata>
+    </port-type>
+    <port-type name="ImplicitIntentBroadcastReceivePortT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="PORT">
+            <shape direction="West" visualizationStrategyKey="org.acmestudio.ui.flowchart.Delay">
+              <fillColor blue="192" green="151" red="184"/>
+              <outlineColor blue="0" green="0" red="0"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <rotateAroundComponentCenter on="true"/>
+            <alignWithAttachedRole on="true"/>
+            <pointer orientation="Out"/>
+          </visualization>
+        </data>
+      </userdata>
+    </port-type>
+    <port-type name="ContentProviderResponsePortT">
+      <port name="prototype">
+        <design-rule name="attachedOnlyToRepositoryRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+    </port-type>
+    <port-type name="ContentProviderCallPortT">
+      <port name="prototype">
+        <design-rule name="attachedOnlyToDataAccessorRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+    </port-type>
+    <component-type name="ActivityComponentT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.RectangleVisualizationStrategy">
+              <decoration type="image" xRegion="0" yRegion="0"><![CDATA[417,-119,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,16,0,0,0,16,8,6,0,0,0,31,-13,-1,97,0,0,1,104,73,68,65,84,120,-100,-59,-110,-67,75,-61,80,20,-59,19,18,-120,72,-15,79,-23,22,26,75,-105,38,16,50,-104,-70,116,-110,126,44,-111,78,82,92,45,4,-123,14,14,29,-35,2,69,10,22,90,92,44,-46,65,-120,99,-112,78,-114,-99,51,88,-38,65,-30,82,41,1,-81,-17,60,95,-48,-67,66,47,-4,-32,-66,115,-49,57,100,-120,68,68,-46,54,108,21,-2,-97,2,89,-106,57,98,14,24,21,-58,13,99,-54,120,17,76,-123,86,17,-98,-33,-100,88,-48,112,-84,105,-38,-93,-21,-70,-13,-47,104,-12,-18,-5,-2,-58,52,77,2,-40,-95,-31,6,15,-68,-14,-49,-16,-126,61,-58,-71,-82,-21,-47,108,54,75,-46,52,-91,-31,112,72,65,16,80,-95,96,112,12,-61,-32,26,110,-16,-64,-117,12,-78,-110,-94,40,-114,109,-37,-49,-53,-27,114,-77,94,-81,9,-124,97,72,-104,32,-24,83,-87,84,38,-37,62,-94,90,-83,70,-39,29,94,100,-112,69,-63,45,-5,-60,-41,36,73,40,-61,-78,44,-102,76,-98,40,-97,-41,57,-51,-26,25,-41,-2,122,-112,65,22,5,101,-57,113,30,-30,56,-2,92,-83,86,4,60,-49,-93,118,-5,-118,90,-83,11,14,118,104,-39,29,94,100,-112,69,-127,-90,-86,-22,73,-79,88,-68,-117,-94,-24,109,-79,88,-48,96,48,-96,122,-35,-93,110,-73,-49,-63,14,13,55,120,-32,69,6,89,20,72,-20,33,51,14,115,-71,-36,101,-75,90,-67,31,-113,-57,-13,94,-81,-9,-47,104,52,-66,0,118,104,-72,-63,3,47,50,-56,102,5,25,-5,12,-99,113,-54,-24,48,-82,5,29,-95,-23,-62,-61,-3,-68,96,-9,-65,-14,-50,11,-66,1,31,-61,59,48,-59,-97,57,8,0,0,0,0,73,69,78,68,-82,66,96,-126,]]></decoration>
+              <fillColor blue="255" green="255" red="255"/>
+            </shape>
+            <label rotation="0" wordwrap="true">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="Port" side="Default"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+    </component-type>
+    <component-type name="ServiceComponentT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.RectangleVisualizationStrategy">
+              <decoration type="image" xRegion="0" yRegion="0"><![CDATA[827,-119,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,16,0,0,0,16,8,6,0,0,0,31,-13,-1,97,0,0,3,2,73,68,65,84,120,-100,117,-109,107,72,83,113,24,-58,-113,-126,-110,4,69,-110,-124,96,38,-35,45,43,4,-19,-125,96,-96,-110,58,49,-69,40,125,80,33,13,-78,-79,82,65,112,-110,-46,-105,-80,-126,-62,-39,102,-110,87,-74,108,95,52,18,70,-50,52,115,-118,-41,109,-122,-37,-100,-105,-44,57,55,-99,-69,56,-25,117,27,-53,-37,-45,-1,44,-120,100,-6,-121,7,14,127,-50,-13,59,-17,-5,-68,-17,-95,0,80,-5,41,53,53,53,-119,-49,-25,-81,10,4,-126,-107,-120,-120,-120,-72,-125,-34,-13,-72,-88,-85,-85,59,-50,98,-79,-114,-80,-39,-20,38,-37,-14,10,54,-20,118,-108,-108,-108,8,11,10,10,14,115,56,-100,19,7,2,-60,98,113,125,109,125,-3,46,95,32,48,53,53,125,-34,48,-102,-52,88,48,-102,-80,100,-77,97,115,107,11,34,-111,104,-3,-109,80,104,-110,72,36,-69,31,-86,-86,-104,123,0,-2,-2,-2,-34,101,101,101,54,-117,-39,12,-91,82,5,-37,-14,50,22,-83,86,-24,-25,-26,97,34,119,-106,-59,69,-84,111,108,-64,-18,112,-64,-11,123,19,-115,-115,-115,-77,30,21,36,39,39,115,-59,-83,-33,64,-97,105,-51,12,-122,-122,126,-94,-89,-73,15,-61,10,5,102,-76,90,-84,-84,-82,-70,-27,112,58,-111,-112,-112,-16,-38,3,-64,-27,-15,-122,-75,58,61,90,-66,-118,-35,-112,-87,105,13,-44,-22,-47,-99,-71,121,-61,14,109,-22,-22,-18,-122,-39,-14,-73,18,78,121,-71,-20,31,-128,-55,100,38,113,-71,92,-21,-28,-44,-44,-74,102,70,11,-71,124,8,-99,63,58,-35,-112,-8,68,-58,-29,-128,-128,-128,-52,-74,-10,118,-21,18,105,-117,-82,-118,-50,101,90,-93,-39,-82,-88,-88,-80,70,69,69,-59,81,49,49,-79,108,-77,117,9,19,-109,83,80,-87,71,-47,-41,63,0,-115,70,-117,91,-73,-17,-16,105,-120,-78,-6,85,-30,-37,-20,20,49,-35,86,-1,-128,-108,-28,50,-121,89,-67,-98,-124,-69,-116,-24,-24,27,-7,84,100,100,100,-18,-68,-63,-128,-79,-15,95,80,-86,70,-48,-37,-41,15,-21,-110,13,36,-44,-17,111,82,-18,102,58,42,-21,-95,79,-67,9,-83,82,-122,22,113,43,-44,99,-29,-48,-23,9,68,-89,67,120,120,120,14,69,-50,-47,-84,-84,44,49,25,-99,-119,-12,11,5,-103,2,29,86,115,115,51,-102,114,-13,-100,-46,-80,-21,112,-28,-105,64,117,-97,1,89,-101,8,51,-77,58,8,26,26,12,-76,-121,-10,-2,-65,121,-107,118,-121,19,-122,5,35,58,37,93,-18,49,-114,-112,-106,-70,120,60,116,-100,-69,12,-57,-125,124,72,35,-82,66,-15,-111,7,6,-125,81,-26,49,-123,-46,-46,82,-109,-45,-27,34,73,91,-120,81,-115,-63,65,41,6,-92,50,12,18,-119,106,107,33,9,-71,-128,-75,-89,-49,-47,17,20,12,65,122,-84,-35,3,-64,46,42,-22,-89,67,35,-101,-73,-69,96,52,-18,-54,-28,114,52,8,-123,110,-115,77,76,-32,93,70,58,6,47,-122,-63,94,-8,18,-99,-63,33,-24,73,57,89,-68,7,64,-9,-109,-106,-106,-10,37,48,48,48,59,40,40,40,79,-87,82,-71,36,93,-35,-88,-82,-87,65,113,113,-79,-53,-49,-49,-81,-15,-47,33,31,-117,52,-12,10,-42,-104,-49,48,112,-2,52,-58,31,94,-118,-37,-9,15,-93,69,-116,-109,6,50,29,45,-39,-62,-8,-8,120,37,-7,64,33,-47,-5,12,111,106,-66,35,-8,44,80,-8,2,79,-82,-123,-26,28,8,-16,-14,-14,-14,39,73,-73,-46,34,-49,-57,-120,-39,-113,-24,50,-47,-67,88,-118,-30,-80,78,-99,41,-94,124,124,125,-1,0,103,86,-65,21,-123,-31,-31,-25,0,0,0,0,73,69,78,68,-82,66,96,-126,]]></decoration>
+              <fillColor blue="255" green="255" red="255"/>
+            </shape>
+            <label rotation="0" wordwrap="true">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="Port" side="Default"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+    </component-type>
+    <component-type name="SystemServiceComponentT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.RectangleVisualizationStrategy">
+              <decoration type="image" xRegion="0" yRegion="0"><![CDATA[827,-119,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,16,0,0,0,16,8,6,0,0,0,31,-13,-1,97,0,0,3,2,73,68,65,84,120,-100,117,-109,107,72,83,113,24,-58,-113,-126,-110,4,69,-110,-124,96,38,-35,45,43,4,-19,-125,96,-96,-110,58,49,-69,40,125,80,33,13,-78,-79,82,65,112,-110,-46,-105,-80,-126,-62,-39,102,-110,87,-74,108,95,52,18,70,-50,52,115,-118,-41,109,-122,-37,-100,-105,-44,57,55,-99,-69,56,-25,117,27,-53,-37,-45,-1,44,-120,100,-6,-121,7,14,127,-50,-13,59,-17,-5,-68,-17,-95,0,80,-5,41,53,53,53,-119,-49,-25,-81,10,4,-126,-107,-120,-120,-120,-72,-125,-34,-13,-72,-88,-85,-85,59,-50,98,-79,-114,-80,-39,-20,38,-37,-14,10,54,-20,118,-108,-108,-108,8,11,10,10,14,115,56,-100,19,7,2,-60,98,113,125,109,125,-3,46,95,32,48,53,53,125,-34,48,-102,-52,88,48,-102,-80,100,-77,97,115,107,11,34,-111,104,-3,-109,80,104,-110,72,36,-69,31,-86,-86,-104,123,0,-2,-2,-2,-34,101,101,101,54,-117,-39,12,-91,82,5,-37,-14,50,22,-83,86,-24,-25,-26,97,34,119,-106,-59,69,-84,111,108,-64,-18,112,-64,-11,123,19,-115,-115,-115,-77,30,21,36,39,39,115,-59,-83,-33,64,-97,105,-51,12,-122,-122,126,-94,-89,-73,15,-61,10,5,102,-76,90,-84,-84,-82,-70,-27,112,58,-111,-112,-112,-16,-38,3,-64,-27,-15,-122,-75,58,61,90,-66,-118,-35,-112,-87,105,13,-44,-22,-47,-99,-71,121,-61,14,109,-22,-22,-18,-122,-39,-14,-73,18,78,121,-71,-20,31,-128,-55,100,38,113,-71,92,-21,-28,-44,-44,-74,102,70,11,-71,124,8,-99,63,58,-35,-112,-8,68,-58,-29,-128,-128,-128,-52,-74,-10,118,-21,18,105,-117,-82,-118,-50,101,90,-93,-39,-82,-88,-88,-80,70,69,69,-59,81,49,49,-79,108,-77,117,9,19,-109,83,80,-87,71,-47,-41,63,0,-115,70,-117,91,-73,-17,-16,105,-120,-78,-6,85,-30,-37,-20,20,49,-35,86,-1,-128,-108,-28,50,-121,89,-67,-98,-124,-69,-116,-24,-24,27,-7,84,100,100,100,-18,-68,-63,-128,-79,-15,95,80,-86,70,-48,-37,-41,15,-21,-110,13,36,-44,-17,111,82,-18,102,58,42,-21,-95,79,-67,9,-83,82,-122,22,113,43,-44,99,-29,-48,-23,9,68,-89,67,120,120,120,14,69,-50,-47,-84,-84,44,49,25,-99,-119,-12,11,5,-103,2,29,86,115,115,51,-102,114,-13,-100,-46,-80,-21,112,-28,-105,64,117,-97,1,89,-101,8,51,-77,58,8,26,26,12,-76,-121,-10,-2,-65,121,-107,118,-121,19,-122,5,35,58,37,93,-18,49,-114,-112,-106,-70,120,60,116,-100,-69,12,-57,-125,124,72,35,-82,66,-15,-111,7,6,-125,81,-26,49,-123,-46,-46,82,-109,-45,-27,34,73,91,-120,81,-115,-63,65,41,6,-92,50,12,18,-119,106,107,33,9,-71,-128,-75,-89,-49,-47,17,20,12,65,122,-84,-35,3,-64,46,42,-22,-89,67,35,-101,-73,-69,96,52,-18,-54,-28,114,52,8,-123,110,-115,77,76,-32,93,70,58,6,47,-122,-63,94,-8,18,-99,-63,33,-24,73,57,89,-68,7,64,-9,-109,-106,-106,-10,37,48,48,48,59,40,40,40,79,-87,82,-71,36,93,-35,-88,-82,-87,65,113,113,-79,-53,-49,-49,-81,-15,-47,33,31,-117,52,-12,10,-42,-104,-49,48,112,-2,52,-58,31,94,-118,-37,-9,15,-93,69,-116,-109,6,50,29,45,-39,-62,-8,-8,120,37,-7,64,33,-47,-5,12,111,106,-66,35,-8,44,80,-8,2,79,-82,-123,-26,28,8,-16,-14,-14,-14,39,73,-73,-46,34,-49,-57,-120,-39,-113,-24,50,-47,-67,88,-118,-30,-80,78,-99,41,-94,124,124,125,-1,0,103,86,-65,21,-123,-31,-31,-25,0,0,0,0,73,69,78,68,-82,66,96,-126,]]></decoration>
+              <decoration label="System" source="Static Label" type="string" xRegion="0" yRegion="2">
+                <font bold="false" height="8" italics="false" name="Arial"/>
+              </decoration>
+              <fillColor blue="255" green="255" red="255"/>
+            </shape>
+            <label rotation="0" wordwrap="true">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="Port" side="Default"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+    </component-type>
+    <component-type name="ContentProviderComponentT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.RepositoryVisualizationStrategy">
+              <decoration type="image" xRegion="0" yRegion="0"><![CDATA[766,-119,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,16,0,0,0,16,8,6,0,0,0,31,-13,-1,97,0,0,2,-59,73,68,65,84,120,-100,117,-110,-53,79,19,97,20,-59,-17,66,99,-6,31,104,92,-69,116,-29,82,-115,73,93,-41,-65,-63,-115,-96,-94,-119,-118,-79,-59,-123,-119,38,-90,38,46,76,52,42,-119,26,-93,-111,16,-127,22,66,-127,62,40,-106,34,80,109,41,-123,-106,-46,-50,-12,-35,-103,78,95,-45,39,-81,78,91,-22,-11,-5,-90,80,30,-58,-59,-55,76,38,-7,-99,115,-18,-36,11,11,78,55,44,-70,86,78,-103,109,63,53,-77,11,78,-83,-35,-31,-46,-38,127,45,105,103,-87,28,109,-39,-119,-26,-120,12,22,-37,117,-73,-97,1,-113,47,0,-82,-27,85,48,-51,-40,1,22,-99,-53,48,105,-79,93,-55,23,74,-104,-50,-118,-104,-55,21,48,-101,47,96,46,95,-60,-68,88,66,-6,93,44,-106,81,36,-49,98,-87,-116,6,-45,-52,91,-25,-118,15,-36,30,47,-40,-25,29,0,14,-105,7,-122,-57,-115,74,10,49,-55,52,-102,-41,-29,104,9,36,112,58,-104,68,43,21,-109,-60,25,-106,-61,31,44,-113,-7,114,21,75,-27,50,-114,78,-104,95,-82,-82,-83,-125,-125,-76,7,39,-87,50,98,48,41,115,98,17,89,46,115,0,51,84,92,7,-74,-123,83,-24,-113,38,49,-56,-80,24,10,71,-2,-104,-84,-77,23,-24,24,-16,-37,-67,10,58,98,112,116,-124,34,82,-61,-3,-6,-59,82,-123,36,87,-79,92,-39,-112,85,-87,84,113,120,108,82,-75,-20,93,107,55,-48,25,-52,74,58,35,-105,-54,96,-128,9,97,-112,13,35,19,-118,-112,-92,40,-122,34,49,-116,68,99,24,-115,37,48,22,79,-30,-58,-26,22,-42,106,18,-22,-58,-89,84,62,127,-112,26,120,65,79,13,72,18,47,100,-1,11,-13,41,65,-122,55,-73,-74,-79,38,-43,81,111,48,-87,-4,65,22,-56,58,-68,114,-125,2,49,72,-91,115,50,-52,118,-32,120,39,57,-98,-32,72,-3,42,110,109,-17,-96,84,111,-56,6,1,38,76,12,60,109,3,-70,34,33,-109,-37,-125,-93,71,106,83,56,-55,-15,-56,-15,60,-18,-20,-44,-80,-34,104,-112,77,16,3,86,54,-16,-75,13,-54,21,-52,-112,-97,72,-31,-16,49,120,63,-103,-62,53,73,-62,-58,-98,65,-112,-115,0,44,17,3,-3,-124,89,89,34,6,-39,-100,-8,15,44,39,19,-15,124,10,83,-126,64,-22,-41,-79,-47,108,-46,91,80,5,67,17,122,-119,110,24,25,55,41,75,36,37,39,22,8,28,63,4,115,7,112,-86,13,-41,-55,-4,-51,-26,46,-39,-126,81,-27,37,-57,4,-70,49,3,124,27,26,83,-46,-3,-118,-123,98,7,78,28,-125,5,33,-115,-23,116,-122,-44,111,-30,-18,110,11,7,-122,-12,42,-93,121,26,-32,-21,-64,32,-68,-18,-1,120,-75,82,37,7,-78,-79,-39,89,21,-99,121,-101,-50,76,118,46,73,-19,100,10,-45,-12,86,-85,-123,-81,-34,-68,-65,54,-84,27,5,120,-41,-1,1,46,94,-70,124,110,96,112,104,110,-54,52,-19,-18,-56,76,101,-107,101,60,44,-117,-43,-3,125,68,63,127,-6,-52,-39,-13,-97,62,127,1,120,-14,-12,25,-36,-69,-33,123,-30,70,87,-73,-30,-42,-19,30,5,121,87,60,82,107,20,106,117,-97,66,-83,105,75,67,-43,-9,88,-2,-34,115,-25,-82,-94,-85,-5,-90,-30,65,-17,-61,-109,-49,-75,47,-32,47,124,-26,32,16,113,-19,116,83,0,0,0,0,73,69,78,68,-82,66,96,-126,]]></decoration>
+              <fillColor blue="255" green="255" red="255"/>
+            </shape>
+            <label rotation="0" wordwrap="true">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="Port" side="Default"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+      <component name="prototype">
+        <design-rule name="atLeastTheseTypesRepositoryPortT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have ports of type RepositoryPortT" label="Has ports of type RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </component>
+    </component-type>
+    <component-type name="BroadcastReceiverComponentT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="COMPONENT">
+            <shape visualizationStrategyKey="org.acmestudio.ui.RectangleVisualizationStrategy">
+              <decoration type="image" xRegion="0" yRegion="0"><![CDATA[438,-119,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,16,0,0,0,16,8,6,0,0,0,31,-13,-1,97,0,0,1,125,73,68,65,84,120,-100,-107,-111,75,75,2,81,20,-57,-5,8,126,-124,89,-28,-52,56,41,-52,-94,40,90,-104,105,62,32,-125,9,113,-47,-82,-99,-69,-78,111,32,68,4,17,-44,42,-126,22,-114,-76,-120,40,-56,69,-122,68,-124,97,15,-88,-51,68,16,25,102,3,26,-12,90,76,84,-117,86,-1,-50,-107,49,6,-79,81,47,-4,56,-9,-63,-7,-35,123,-49,-23,1,-48,-45,-64,58,-82,-121,36,-36,122,93,40,7,68,-24,17,65,-81,69,-7,-92,-11,-4,47,-25,63,-127,117,84,-93,-126,-14,50,-55,107,-17,113,-89,-10,26,115,58,58,18,-36,12,75,40,-115,-118,120,12,11,120,-102,-32,-77,111,49,39,103,76,-11,-86,76,-46,-43,11,42,33,-111,-85,-114,11,-87,103,-123,55,-24,118,-114,-67,-124,-66,-109,-78,21,-100,74,110,-103,106,-96,63,4,69,-44,-94,-126,81,9,-118,50,-109,80,-94,74,81,97,53,-79,21,-100,-69,-35,-38,125,124,4,-97,-23,57,124,-52,-12,-125,-110,12,-110,113,-107,16,-55,66,-94,-125,21,-42,86,80,-108,60,-88,38,120,124,101,-4,-8,62,-98,69,121,76,-84,31,-106,124,-82,122,100,-35,-79,21,-100,8,-98,-62,-27,64,31,-82,18,97,-36,-59,-3,63,-38,-96,-92,-101,-123,53,26,45,110,39,-112,-9,-67,-127,-99,-91,-27,21,-28,-62,-111,-67,-94,-53,35,55,23,-73,109,23,-42,-42,55,-78,4,-120,66,-85,-18,-40,10,-74,-74,119,29,4,44,112,93,9,-14,-121,71,73,-62,32,64,-24,68,-86,43,65,-15,-20,66,39,86,9,16,41,-74,-18,88,-112,-50,108,-54,4,90,-96,116,36,-104,95,88,84,9,-115,-16,17,48,99,-127,-19,-73,21,-28,14,-14,89,2,-60,52,-95,-102,115,-43,92,-41,-25,-51,-126,95,90,31,-41,83,108,72,-81,81,0,0,0,0,73,69,78,68,-82,66,96,-126,]]></decoration>
+              <fillColor blue="255" green="255" red="255"/>
+            </shape>
+            <label rotation="0" wordwrap="true">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictPortType allowedTypes="" on="false"/>
+            <forcePortPlacement on="true">
+              <portPlacementRule alignment="Center" portType="Port" side="Default"/>
+            </forcePortPlacement>
+            <resizeToFitPorts on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+    </component-type>
+    <role-type name="ImplicitIntentBroadcastAnnounceRoleT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="ROLE">
+            <shape visualizationStrategyKey="org.acmestudio.ui.flowchart.Delay">
+              <fillColor blue="255" green="255" red="255"/>
+              <outlineColor blue="156" green="164" red="227"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <extras>
+              <attribute key="HIDE_ROLE" type="boolean" val="true"/>
+            </extras>
+            <rotateAroundConnectorCenter on="true"/>
+            <pointer orientation="Out"/>
+          </visualization>
+        </data>
+      </userdata>
+    </role-type>
+    <role-type name="ImplicitIntentBroadcastReceiveRoleT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="ROLE">
+            <shape direction="West" visualizationStrategyKey="org.acmestudio.ui.flowchart.Delay">
+              <fillColor blue="255" green="255" red="255"/>
+              <outlineColor blue="192" green="151" red="184"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <extras>
+              <attribute key="HIDE_ROLE" type="boolean" val="true"/>
+            </extras>
+            <rotateAroundConnectorCenter on="true"/>
+            <pointer orientation="Out"/>
+          </visualization>
+        </data>
+      </userdata>
+    </role-type>
+    <role-type name="ContentProviderRequestRoleT">
+      <role name="prototype">
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToDataAccessorPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+    </role-type>
+    <role-type name="ContentProviderResponseRoleT">
+      <role name="prototype">
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToRepositoryPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+    </role-type>
+    <connector-type name="IntentBusT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="CONNECTOR">
+            <shape visualizationStrategyKey="org.acmestudio.ui.visualization.BusVisualizationStrategy">
+              <fillColor blue="192" green="151" red="184"/>
+              <size height="30" width="300"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictRoleType allowedTypes="" on="false"/>
+            <forceRoleRoute>
+              <roleRouteRule roleType="PublisherRoleT" route="ELBOW"/>
+              <roleRouteRule roleType="SubscriberRoleT" route="ELBOW"/>
+            </forceRoleRoute>
+            <defaultRoleCount value="0"/>
+            <autoCenterBinaryConnector on="false"/>
+          </visualization>
+        </data>
+      </userdata>
+    </connector-type>
+    <connector-type name="IntentCallResponseConnectorT">
+      <userdata key="element-visualization">
+        <data>
+          <visualization hideFromPalette="false" type="CONNECTOR">
+            <shape visualizationStrategyKey="org.acmestudio.ui.flowchart.Terminator">
+              <fillColor blue="255" green="255" red="255"/>
+              <size height="25" width="25"/>
+            </shape>
+            <label rotation="0">
+              <labelColor/>
+            </label>
+            <font/>
+            <representation>
+              <data>
+                <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+              </data>
+            </representation>
+            <restrictRoleType allowedTypes="" on="false"/>
+            <forceRoleRoute/>
+            <defaultRoleCount value="2"/>
+            <autoCenterBinaryConnector on="true"/>
+          </visualization>
+        </data>
+      </userdata>
+      <userdata key="SubElementRules">
+        <data>
+          <createRule prefix="response" types="ExplicitIntentResponseRoleT"/>
+          <createRule prefix="call" types="ExplicitIntentCallRoleT"/>
+        </data>
+      </userdata>
+    </connector-type>
+    <connector-type name="ContentProviderConnectorT">
+      <userdata key="SubElementRules">
+        <data>
+          <createRule prefix="repository" types="ContentProviderResponseRoleT"/>
+          <createRule prefix="access" types="ContentProviderRequestRoleT"/>
+        </data>
+      </userdata>
+      <connector name="prototype">
+        <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="atLeastTheseTypesRepositoryRoleT">
+          <userdata key="RuleInfo">
+            <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </connector>
+    </connector-type>
+    <system name="prototype">
+      <userdata key="connection-patterns">
+        <data>
+          <portConnectionRule connector="Connector" name="">
+            <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+            <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+          </portConnectionRule>
+        </data>
+      </userdata>
+      <connector name="ImplicitIntentBus">
+        <userdata key="vis-information">
+          <data rotation="0.0" x="100" y="50"/>
+        </userdata>
+      </connector>
+    </system>
+  </family>
+</AcmeModel>

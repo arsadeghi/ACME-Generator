@@ -1,0 +1,254 @@
+import families/Android.acme;
+system K9-Email : Android = new Android extended with {
+   component Accounts : ActivityComponentT = new ActivityComponentT extended with {
+      port ExplicitIntentResponsePortT0 : ExplicitIntentResponsePortT = new ExplicitIntentResponsePortT;
+      port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+      property state = Created;
+      property class = "com.fsck.k9.activity.Accounts";
+      property intentFilters = {
+         "android.intent.action.MAIN", "android.intent.action.VIEW" };
+      property exported = true;
+   };
+   component Message_Compose : ActivityComponentT = new ActivityComponentT extended with {
+      port p : ExplicitIntentCallPortT = new ExplicitIntentCallPortT extended with {
+         property componentReference = "com.fsck.k9.activity.EmailAddressList";
+      };
+      port ExplicitIntentCallPortT0 : ExplicitIntentCallPortT = new ExplicitIntentCallPortT extended with {
+         property componentReference = "com.fsck.k9.activity.Accounts";
+      };
+      port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+      port ImplicitIntentBroadcastAnnouncerPortT0 : ImplicitIntentBroadcastAnnouncerPortT = new ImplicitIntentBroadcastAnnouncerPortT extended with {
+         property action = "ACTION_GET_CONTENT";
+         property category = "CATEGORY_OPENABLE";
+      };
+      port ExplicitIntentCallPortT1 : ExplicitIntentCallPortT = new ExplicitIntentCallPortT;
+      port p0 : ExplicitIntentCallPortT = new ExplicitIntentCallPortT;
+      property state = Created;
+      property intentFilters = {
+         "android.intent.action.SENDTO", "android.intent.action.SEND", "android.intent.action.SEND_MULTIPLE", "android.intent.action.VIEW" };
+      property exported = true;
+      property class = "com.fsck.k9.activity.MessageCompose";
+   };
+   component Message_List : ActivityComponentT = new ActivityComponentT extended with {
+      port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+      port p : ContentProviderCallPortT = new ContentProviderCallPortT;
+      port ContentProviderCallPortT0 : ContentProviderCallPortT = new ContentProviderCallPortT;
+      port ContentProviderCallPortT1 : ContentProviderCallPortT = new ContentProviderCallPortT;
+      port p1 : ExplicitIntentResponsePortT = new ExplicitIntentResponsePortT extended with {
+         rule atLeast1Attachment = heuristic size(self.ATTACHEDROLES) >= 1;
+         rule attachedOnlyToReponderRoleT = invariant forall r in self.ATTACHEDROLES | declaresType(r, ResponderRoleT);
+      };
+      property state = Created;
+      property intentFilters = {
+         "android.intent.action.MAIN", "android.intent.action.VIEW" };
+      property exported = true;
+      property class = "com.fsck.k9.activity.MessageList";
+   };
+   component MailService : ServiceComponentT = new ServiceComponentT extended with {
+      port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+      property intentFilters = {
+      };
+   };
+   component Remote_Control_Service : ServiceComponentT = new ServiceComponentT extended with {
+      port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+      property intentFilters = {
+      };
+      property permission = "com.fsk.k9.permission.REMOTE_CONTROL";
+   };
+   component Notification_Service : ServiceComponentT = new ServiceComponentT extended with {
+      port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+      property intentFilters = {
+      };
+   };
+   component Boot_Receiver : BroadcastReceiverComponentT = new BroadcastReceiverComponentT extended with {
+      port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+      property intentFilters U= {
+         "android.intent.action.BOOT_COMPLETED", "android.intent.action.DEVICE_STORAGE_LOW", "android.intent.action.DEVICE_STORAGE_OK", "android.net.conn.CONNECTIVITY_CHANGE", "android.net.conn.BACKGROUND_DATA_SETTING_CHANGED", "com.android.sync.SYNC_CONN_STATUS_CHANGED" };
+         property exported = true;
+   };
+   component Unread_Widget_Provider : BroadcastReceiverComponentT = new BroadcastReceiverComponentT extended with {
+      port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+      property exported = true;
+      property intentFilters = {
+         "android.appwidget.action.APPWIDGET_UPDATE" };
+   };
+   component Storage_Receiver : BroadcastReceiverComponentT = new BroadcastReceiverComponentT extended with {
+      port ImplicitIntentBroadcastReceivePortT0 : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+      property intentFilters = {
+         "android.intent.action.MEDIA_MOUNTED" };
+      property exported = true;
+   };
+   component Remote_Control_Receiver : BroadcastReceiverComponentT = new BroadcastReceiverComponentT extended with {
+      port p : ImplicitIntentBroadcastReceivePortT = new ImplicitIntentBroadcastReceivePortT;
+      property permission = "com.fsk.k9.permission.REMOTE_CONTROL";
+      property intentFilters = {
+         "com.fsck.k9.k9RemoteControl.set", "com.fsck.k9.K(RemoteControl.requestAccounts" };
+      property exported = true;
+   };
+   component Account_Setting : ActivityComponentT = new ActivityComponentT extended with {
+      port ExplicitIntentCallPortT0 : ExplicitIntentCallPortT = new ExplicitIntentCallPortT extended with {
+         property componentReference = "com.fsck.k9.activity.ManageIdentities";
+         property action = "ACTIVITY_MANAGE_IDENTITIES";
+      };
+      property state = Created;
+      property intentFilters = {
+      };
+      property class = "com.fsck.k9.activity.setup.AccountSettings";
+   };
+   component Email_Address_List : ActivityComponentT = new ActivityComponentT extended with {
+      port p : ExplicitIntentResponsePortT = new ExplicitIntentResponsePortT;
+      property state = Created;
+      property intentFilters = {
+      };
+   };
+   component Manage_Identities : ActivityComponentT = new ActivityComponentT extended with {
+      port ExplicitIntentResponsePortT0 : ExplicitIntentResponsePortT = new ExplicitIntentResponsePortT;
+      port p : ExplicitIntentCallPortT = new ExplicitIntentCallPortT extended with {
+         property action = "";
+         property componentReference = "com.fsck.k9.activity.EditIdentity";
+      };
+      property state = Created;
+      property intentFilters U= {
+      };
+      property class = "com.fsck.k9.activity.ManageIdentities";
+   };
+   component Edit_Identities : ActivityComponentT = new ActivityComponentT extended with {
+      port p : ExplicitIntentResponsePortT = new ExplicitIntentResponsePortT;
+      property state = Created;
+      property intentFilters = {
+      };
+      property class = "com.fsck.k9.activity.EditIdentity";
+   };
+   component Choose_Folder : ActivityComponentT = new ActivityComponentT extended with {
+      port p : ExplicitIntentResponsePortT = new ExplicitIntentResponsePortT;
+      port p1 : ExplicitIntentCallPortT = new ExplicitIntentCallPortT extended with {
+         property componentReference = "com.fsck.k9.activity.MessageList";
+         rule mustReferenceComponent = invariant hasValue(componentReference);
+         rule atLeast1Attachment = heuristic size(self.ATTACHEDROLES) >= 1;
+         rule attachedOnlyToCallerRoleT = invariant forall r in self.ATTACHEDROLES | declaresType(r, CallerRoleT);
+      };
+      property state = Created;
+      property intentFilters = {
+      };
+   };
+   component Attachment_Provider : ContentProviderComponentT = new ContentProviderComponentT extended with {
+      port p : ContentProviderResponsePortT = new ContentProviderResponsePortT;
+      property read-permission = "com.fsck.k9.permission.READ_ATTACHMENT";
+      property write-permission = "";
+      property exported = true;
+   };
+   component Email_Provider : ContentProviderComponentT = new ContentProviderComponentT extended with {
+      port p : ContentProviderResponsePortT = new ContentProviderResponsePortT;
+      property read-permission = "";
+      property write-permission = "";
+   };
+   component Message_Provider : ContentProviderComponentT = new ContentProviderComponentT extended with {
+      port ContentProviderResponsePortT0 : ContentProviderResponsePortT = new ContentProviderResponsePortT;
+      property read-permission = "com.fsck.k9.permission.READ_MESSAGES";
+      property write-permission = "com.fsck.k9.permission.DELETE_MESSAGES";
+      property exported = true;
+   };
+  connector IntentCallResponseConnectorT0 : IntentCallResponseConnectorT = new IntentCallResponseConnectorT extended with {
+     role ExplicitIntentCallRoleT0 : ExplicitIntentCallRoleT = new ExplicitIntentCallRoleT;
+     role ExplicitIntentResponseRoleT0 : ExplicitIntentResponseRoleT = new ExplicitIntentResponseRoleT;
+  };
+  connector IntentCallResponseConnectorT1 : IntentCallResponseConnectorT = new IntentCallResponseConnectorT extended with {
+     role ExplicitIntentCallRoleT0 : ExplicitIntentCallRoleT = new ExplicitIntentCallRoleT extended with {
+        rule exactly1Attachment = heuristic size(self.ATTACHEDPORTS) == 1;
+        rule attachedOnlyToRequestPort = invariant forall p : Port in self.ATTACHEDPORTS | declaresType(p, RequestPortT);
+     };
+     role ExplicitIntentResponseRoleT0 : ExplicitIntentResponseRoleT = new ExplicitIntentResponseRoleT extended with {
+        rule exactly1Attachment = heuristic size(self.ATTACHEDPORTS) == 1;
+        rule attachedOnlyToResponsePort = invariant forall p : Port in self.ATTACHEDPORTS | declaresType(p, ResponsePortT);
+     };
+     property pending = false;
+     rule exactly2Roles = invariant size(self.ROLES) == 2;
+     rule exactly1RoleOfTypeCallerRoleT = invariant exists r in self.ROLES | declaresType(r, CallerRoleT);
+     rule exactly1RoleOfTypeResponderRoleT = invariant exists r in self.ROLES | declaresType(r, ResponderRoleT);
+  };
+  connector IntentCallResponseConnectorT2 : IntentCallResponseConnectorT = new IntentCallResponseConnectorT extended with {
+     role ExplicitIntentCallRoleT0 : ExplicitIntentCallRoleT = new ExplicitIntentCallRoleT extended with {
+        rule exactly1Attachment = heuristic size(self.ATTACHEDPORTS) == 1;
+        rule attachedOnlyToRequestPort = invariant forall p : Port in self.ATTACHEDPORTS | declaresType(p, RequestPortT);
+     };
+     role ExplicitIntentResponseRoleT0 : ExplicitIntentResponseRoleT = new ExplicitIntentResponseRoleT extended with {
+        rule exactly1Attachment = heuristic size(self.ATTACHEDPORTS) == 1;
+        rule attachedOnlyToResponsePort = invariant forall p : Port in self.ATTACHEDPORTS | declaresType(p, ResponsePortT);
+     };
+     property pending = false;
+     rule exactly2Roles = invariant size(self.ROLES) == 2;
+     rule exactly1RoleOfTypeCallerRoleT = invariant exists r in self.ROLES | declaresType(r, CallerRoleT);
+     rule exactly1RoleOfTypeResponderRoleT = invariant exists r in self.ROLES | declaresType(r, ResponderRoleT);
+  };
+  connector IntentCallResponseConnectorT3 : IntentCallResponseConnectorT = new IntentCallResponseConnectorT extended with {
+     role ExplicitIntentCallRoleT0 : ExplicitIntentCallRoleT = new ExplicitIntentCallRoleT;
+     role ExplicitIntentResponseRoleT0 : ExplicitIntentResponseRoleT = new ExplicitIntentResponseRoleT;
+  };
+  connector ContentProviderConnectorT0 : ContentProviderConnectorT = new ContentProviderConnectorT extended with {
+     role repository : ContentProviderResponseRoleT = new ContentProviderResponseRoleT;
+     role access : ContentProviderRequestRoleT = new ContentProviderRequestRoleT;
+  };
+  connector ContentProviderConnectorT1 : ContentProviderConnectorT = new ContentProviderConnectorT extended with {
+     role repository : ContentProviderResponseRoleT = new ContentProviderResponseRoleT;
+     role access : ContentProviderRequestRoleT = new ContentProviderRequestRoleT;
+  };
+  connector ContentProviderConnectorT2 : ContentProviderConnectorT = new ContentProviderConnectorT extended with {
+     role repository : ContentProviderResponseRoleT = new ContentProviderResponseRoleT;
+     role access : ContentProviderRequestRoleT = new ContentProviderRequestRoleT;
+  };
+  connector IntentCallResponseConnectorT4 : IntentCallResponseConnectorT = new IntentCallResponseConnectorT extended with {
+     role response : ExplicitIntentResponseRoleT = new ExplicitIntentResponseRoleT;
+     role call : ExplicitIntentCallRoleT = new ExplicitIntentCallRoleT;
+  };
+  connector IntentCallResponseConnectorT5 : IntentCallResponseConnectorT = new IntentCallResponseConnectorT extended with {
+     role response : ExplicitIntentResponseRoleT = new ExplicitIntentResponseRoleT;
+     role call : ExplicitIntentCallRoleT = new ExplicitIntentCallRoleT;
+  };
+  connector ImplicitIntentBus : IntentBusT = new IntentBusT extended with {
+     role ImplicitIntentBroadcastAnnounceRoleT0 : ImplicitIntentBroadcastAnnounceRoleT = new ImplicitIntentBroadcastAnnounceRoleT;
+     role ImplicitIntentBroadcastReceiveRoleT0 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+     role ImplicitIntentBroadcastReceiveRoleT1 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+     role ImplicitIntentBroadcastReceiveRoleT2 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+     role r_ImplicitIntentBroadcastReceiveRoleT : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+     role r_ImplicitIntentBroadcastReceiveRoleT0 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+     role r_ImplicitIntentBroadcastReceiveRoleT1 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+     role r_ImplicitIntentBroadcastReceiveRoleT2 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+     role r_ImplicitIntentBroadcastReceiveRoleT3 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+     role r_ImplicitIntentBroadcastReceiveRoleT4 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+     role r_ImplicitIntentBroadcastReceiveRoleT5 : ImplicitIntentBroadcastReceiveRoleT = new ImplicitIntentBroadcastReceiveRoleT;
+  };
+  attachment Account_Setting.ExplicitIntentCallPortT0 to IntentCallResponseConnectorT0.ExplicitIntentCallRoleT0;
+  attachment Manage_Identities.ExplicitIntentResponsePortT0 to IntentCallResponseConnectorT0.ExplicitIntentResponseRoleT0;
+  attachment Email_Address_List.p to IntentCallResponseConnectorT1.ExplicitIntentResponseRoleT0;
+  attachment Message_Compose.p to IntentCallResponseConnectorT1.ExplicitIntentCallRoleT0;
+  attachment Manage_Identities.p to IntentCallResponseConnectorT2.ExplicitIntentCallRoleT0;
+  attachment Edit_Identities.p to IntentCallResponseConnectorT2.ExplicitIntentResponseRoleT0;
+  attachment Message_Compose.ExplicitIntentCallPortT0 to IntentCallResponseConnectorT3.ExplicitIntentCallRoleT0;
+  attachment Accounts.ExplicitIntentResponsePortT0 to IntentCallResponseConnectorT3.ExplicitIntentResponseRoleT0;
+  attachment Message_Compose.ImplicitIntentBroadcastAnnouncerPortT0 to ImplicitIntentBus.ImplicitIntentBroadcastAnnounceRoleT0;
+  attachment Message_Compose.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.ImplicitIntentBroadcastReceiveRoleT0;
+  attachment Message_Provider.ContentProviderResponsePortT0 to ContentProviderConnectorT0.repository;
+  attachment Message_List.ContentProviderCallPortT1 to ContentProviderConnectorT0.access;
+  attachment Message_List.ContentProviderCallPortT0 to ContentProviderConnectorT1.access;
+  attachment Email_Provider.p to ContentProviderConnectorT1.repository;
+  attachment Message_List.p to ContentProviderConnectorT2.access;
+  attachment Attachment_Provider.p to ContentProviderConnectorT2.repository;
+  attachment Message_List.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.ImplicitIntentBroadcastReceiveRoleT1;
+  attachment Choose_Folder.p to IntentCallResponseConnectorT4.response;
+  attachment Message_Compose.p0 to IntentCallResponseConnectorT4.call;
+  attachment Remote_Control_Receiver.p to ImplicitIntentBus.ImplicitIntentBroadcastReceiveRoleT2;
+  attachment MailService.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.r_ImplicitIntentBroadcastReceiveRoleT;
+  attachment Remote_Control_Service.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.r_ImplicitIntentBroadcastReceiveRoleT0;
+  attachment Notification_Service.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.r_ImplicitIntentBroadcastReceiveRoleT1;
+  attachment Storage_Receiver.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.r_ImplicitIntentBroadcastReceiveRoleT2;
+  attachment Unread_Widget_Provider.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.r_ImplicitIntentBroadcastReceiveRoleT3;
+  attachment Boot_Receiver.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.r_ImplicitIntentBroadcastReceiveRoleT4;
+  attachment Accounts.ImplicitIntentBroadcastReceivePortT0 to ImplicitIntentBus.r_ImplicitIntentBroadcastReceiveRoleT5;
+  attachment Choose_Folder.p1 to IntentCallResponseConnectorT5.call;
+  attachment Message_List.p1 to IntentCallResponseConnectorT5.response;
+  group K9 : AndroidApplicationGroupT = new AndroidApplicationGroupT extended with {
+     property usesPermissions = {
+        "android.permission.RECEIVE_BOOT_COMPLETED", "android.permission.READ_CONTACTS", "android.permission.READ_SYNC_SETTINGS", "android.permission.WRITE_CONTACTS", "android.permission.ACCESS_NETWORK_STATE", "android.permission.INTERNET", "android.permission.VIBRATE", "android.permission.WAKE_LOCK", "android.permission.WRITE_EXTERNAL_STORAGE", "com.fsck.k9.permission.READ_ATTACHMENT", "com.fsk.k9.permission.REMOTE_CONTROL", "com.fsck.k9.permission.READ_MESSAGES", "com.fsck.k9.permission.DELETE_MESSAGES" };
+     members {
+        Accounts, Email_Address_List, Account_Setting, Manage_Identities, Message_Compose, Message_List, Choose_Folder, Edit_Identities, Attachment_Provider, Email_Provider, Message_Provider, Remote_Control_Receiver, Storage_Receiver, Unread_Widget_Provider, Notification_Service, Remote_Control_Service, MailService, Boot_Receiver } };
+}

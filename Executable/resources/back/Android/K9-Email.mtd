@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AcmeModel>
+  <system name="K9-Email">
+    <userdata key="SaveData">
+      <data date="2/11/15 12:49 PM"/>
+    </userdata>
+    <userdata key="connection-patterns">
+      <data>
+        <portConnectionRule connector="Connector" name="">
+          <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+          <association componentType="Component" portName="p" portType="Port" roleName="r" roleType="Role"/>
+        </portConnectionRule>
+      </data>
+    </userdata>
+    <component name="Accounts">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="77" y="244"/>
+      </userdata>
+      <port name="ExplicitIntentResponsePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="50" relPosY="-1" rotation="0.0" x="127" y="243"/>
+        </userdata>
+      </port>
+      <port name="ImplicitIntentBroadcastReceivePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" height="10" relPosX="0" relPosY="25" rotation="0.0" width="10" x="77" y="269"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Message_Compose">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="244" y="159"/>
+      </userdata>
+      <port name="p">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="-50" relPosY="-1" rotation="0.0" x="194" y="158"/>
+        </userdata>
+      </port>
+      <port name="ExplicitIntentCallPortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="-22" relPosY="25" rotation="0.0" x="222" y="184"/>
+        </userdata>
+      </port>
+      <port name="ImplicitIntentBroadcastReceivePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="-7" relPosY="25" rotation="0.0" x="237" y="184"/>
+        </userdata>
+      </port>
+      <port name="ImplicitIntentBroadcastAnnouncerPortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="8" relPosY="25" rotation="0.0" x="252" y="184"/>
+        </userdata>
+      </port>
+      <port name="ExplicitIntentCallPortT1">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="23" relPosY="25" rotation="0.0" x="267" y="184"/>
+        </userdata>
+      </port>
+      <port name="p0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="50" relPosY="-1" rotation="0.0" x="294" y="158"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Message_List">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="456" y="245"/>
+      </userdata>
+      <port name="ImplicitIntentBroadcastReceivePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="0" relPosY="25" rotation="0.0" x="456" y="270"/>
+        </userdata>
+      </port>
+      <port name="p">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="50" relPosY="-16" rotation="0.0" x="506" y="229"/>
+        </userdata>
+        <design-rule name="attachedOnlyToDataAccessorRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <port name="ContentProviderCallPortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="50" relPosY="-1" rotation="0.0" x="506" y="244"/>
+        </userdata>
+        <design-rule name="attachedOnlyToDataAccessorRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <port name="ContentProviderCallPortT1">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="50" relPosY="14" rotation="0.0" x="506" y="259"/>
+        </userdata>
+        <design-rule name="attachedOnlyToDataAccessorRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a DataAccessorPortT must have type DataAccessorRoleT." evaluate="false" label="DataAccessorPortT must be attached to DataAccessorRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <port name="p1">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-5" relPosY="-25" rotation="0.0" x="451" y="220"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="MailService">
+      <userdata key="vis-information">
+        <data category="component" height="50" rotation="0.0" width="100" x="796" y="75"/>
+      </userdata>
+      <port name="ImplicitIntentBroadcastReceivePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-21" relPosY="25" rotation="0.0" x="775" y="100"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Remote_Control_Service">
+      <userdata key="vis-information">
+        <data category="component" height="50" rotation="0.0" width="100" x="847" y="146"/>
+      </userdata>
+      <port name="ImplicitIntentBroadcastReceivePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-23" relPosY="25" rotation="0.0" x="824" y="171"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Notification_Service">
+      <userdata key="vis-information">
+        <data category="component" height="50" rotation="0.0" width="100" x="884" y="208"/>
+      </userdata>
+      <port name="ImplicitIntentBroadcastReceivePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="0" relPosY="25" rotation="0.0" x="884" y="233"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Boot_Receiver">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="959" y="75"/>
+      </userdata>
+      <port name="ImplicitIntentBroadcastReceivePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-10" relPosY="25" rotation="0.0" x="949" y="100"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Unread_Widget_Provider">
+      <userdata key="vis-information">
+        <data category="component" height="50" rotation="0.0" width="100" x="1013" y="138"/>
+      </userdata>
+      <port name="ImplicitIntentBroadcastReceivePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-28" relPosY="25" rotation="0.0" x="985" y="163"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Storage_Receiver">
+      <userdata key="vis-information">
+        <data category="component" height="50" rotation="0.0" width="100" x="1052" y="205"/>
+      </userdata>
+      <port name="ImplicitIntentBroadcastReceivePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="0" relPosY="25" rotation="0.0" x="1052" y="230"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Remote_Control_Receiver">
+      <userdata key="vis-information">
+        <data category="component" height="50" rotation="0.0" width="100" x="1111" y="269"/>
+      </userdata>
+      <port name="p">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-8" relPosY="25" rotation="0.0" x="1103" y="294"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Account_Setting">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="70" y="78"/>
+      </userdata>
+      <port name="ExplicitIntentCallPortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="50" relPosY="-1" rotation="0.0" x="120" y="77"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Email_Address_List">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="74" y="159"/>
+      </userdata>
+      <port name="p">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="50" relPosY="-1" rotation="0.0" x="124" y="158"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Manage_Identities">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="245" y="78"/>
+      </userdata>
+      <port name="ExplicitIntentResponsePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="-50" relPosY="-1" rotation="0.0" x="195" y="77"/>
+        </userdata>
+      </port>
+      <port name="p">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="50" relPosY="0" rotation="0.0" x="295" y="78"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Edit_Identities">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="454" y="76"/>
+      </userdata>
+      <port name="p">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="-50" relPosY="-1" rotation="0.0" x="404" y="75"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Choose_Folder">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="454" y="155"/>
+      </userdata>
+      <port name="p">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="-50" relPosY="-1" rotation="0.0" x="404" y="154"/>
+        </userdata>
+      </port>
+      <port name="p1">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-4" relPosY="25" rotation="0.0" x="450" y="180"/>
+        </userdata>
+      </port>
+    </component>
+    <component name="Attachment_Provider">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="639" y="77"/>
+      </userdata>
+      <port name="p">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-50" relPosY="2" rotation="0.0" x="589" y="79"/>
+        </userdata>
+        <design-rule name="attachedOnlyToRepositoryRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <design-rule name="atLeastTheseTypesRepositoryPortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type RepositoryPortT" label="Has ports of type RepositoryPortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <component name="Email_Provider">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="638" y="168"/>
+      </userdata>
+      <port name="p">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="true" relPosX="-50" relPosY="-1" rotation="0.0" x="588" y="167"/>
+        </userdata>
+        <design-rule name="attachedOnlyToRepositoryRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <design-rule name="atLeastTheseTypesRepositoryPortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type RepositoryPortT" label="Has ports of type RepositoryPortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <component name="Message_Provider">
+      <userdata key="vis-information">
+        <data category="component" rotation="0.0" x="645" y="245"/>
+      </userdata>
+      <port name="ContentProviderResponsePortT0">
+        <userdata key="vis-information">
+          <data category="port" componentManaged="false" relPosX="-50" relPosY="4" rotation="0.0" x="595" y="249"/>
+        </userdata>
+        <design-rule name="attachedOnlyToRepositoryRole">
+          <userdata key="RuleInfo">
+            <data errMsg="Any role attached to a RepositoryPortT must have type RepositoryRoleT." evaluate="false" label="RepositoryPortT must be attached to RepositoryRoleT"/>
+          </userdata>
+        </design-rule>
+      </port>
+      <design-rule name="atLeastTheseTypesRepositoryPortT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have ports of type RepositoryPortT" label="Has ports of type RepositoryPortT"/>
+        </userdata>
+      </design-rule>
+    </component>
+    <connector name="IntentCallResponseConnectorT0">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="158" y="77"/>
+      </userdata>
+      <role name="ExplicitIntentCallRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="120" y="77"/>
+        </userdata>
+      </role>
+      <role name="ExplicitIntentResponseRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="195" y="77"/>
+        </userdata>
+      </role>
+    </connector>
+    <connector name="IntentCallResponseConnectorT1">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="159" y="158"/>
+      </userdata>
+      <role name="ExplicitIntentCallRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="194" y="158"/>
+        </userdata>
+      </role>
+      <role name="ExplicitIntentResponseRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="124" y="158"/>
+        </userdata>
+      </role>
+    </connector>
+    <connector name="IntentCallResponseConnectorT2">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="350" y="77"/>
+      </userdata>
+      <role name="ExplicitIntentCallRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="295" y="78"/>
+        </userdata>
+      </role>
+      <role name="ExplicitIntentResponseRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="404" y="75"/>
+        </userdata>
+      </role>
+    </connector>
+    <connector name="IntentCallResponseConnectorT3">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="175" y="214"/>
+      </userdata>
+      <role name="ExplicitIntentCallRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="222" y="184"/>
+        </userdata>
+      </role>
+      <role name="ExplicitIntentResponseRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="127" y="243"/>
+        </userdata>
+      </role>
+    </connector>
+    <connector name="ContentProviderConnectorT0">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="551" y="254">
+          <visualization>
+            <visualization hideFromPalette="false" type="CONNECTOR">
+              <shape visualizationStrategyKey="org.acmestudio.ui.OvalVisualizationStrategy">
+                <size height="15" width="15"/>
+              </shape>
+              <label rotation="0">
+                <labelColor/>
+              </label>
+              <font/>
+              <representation>
+                <data>
+                  <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+                </data>
+              </representation>
+              <restrictRoleType allowedTypes="" on="false"/>
+              <forceRoleRoute/>
+              <defaultRoleCount value="2"/>
+              <autoCenterBinaryConnector on="true"/>
+            </visualization>
+          </visualization>
+        </data>
+      </userdata>
+      <role name="repository">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="595" y="249"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToRepositoryPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <role name="access">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="506" y="259"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToDataAccessorPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+        </userdata>
+      </design-rule>
+      <design-rule name="atLeastTheseTypesRepositoryRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+        </userdata>
+      </design-rule>
+    </connector>
+    <connector name="ContentProviderConnectorT1">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="547" y="206">
+          <visualization>
+            <visualization hideFromPalette="false" type="CONNECTOR">
+              <shape visualizationStrategyKey="org.acmestudio.ui.OvalVisualizationStrategy">
+                <size height="15" width="15"/>
+              </shape>
+              <label rotation="0">
+                <labelColor/>
+              </label>
+              <font/>
+              <representation>
+                <data>
+                  <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+                </data>
+              </representation>
+              <restrictRoleType allowedTypes="" on="false"/>
+              <forceRoleRoute/>
+              <defaultRoleCount value="2"/>
+              <autoCenterBinaryConnector on="true"/>
+            </visualization>
+          </visualization>
+        </data>
+      </userdata>
+      <role name="repository">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="588" y="167"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToRepositoryPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <role name="access">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="506" y="244"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToDataAccessorPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+        </userdata>
+      </design-rule>
+      <design-rule name="atLeastTheseTypesRepositoryRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+        </userdata>
+      </design-rule>
+    </connector>
+    <connector name="ContentProviderConnectorT2">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="548" y="154">
+          <visualization>
+            <visualization hideFromPalette="false" type="CONNECTOR">
+              <shape visualizationStrategyKey="org.acmestudio.ui.OvalVisualizationStrategy">
+                <size height="15" width="15"/>
+              </shape>
+              <label rotation="0">
+                <labelColor/>
+              </label>
+              <font/>
+              <representation>
+                <data>
+                  <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+                </data>
+              </representation>
+              <restrictRoleType allowedTypes="" on="false"/>
+              <forceRoleRoute/>
+              <defaultRoleCount value="2"/>
+              <autoCenterBinaryConnector on="true"/>
+            </visualization>
+          </visualization>
+        </data>
+      </userdata>
+      <role name="repository">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="589" y="79"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A RepositoryRoleT must be attached to a port." evaluate="false" label="RepositoryRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToRepositoryPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a RepositoryRoleT must have type RepositoryPortT." evaluate="false" label="RepositoryRoleT must be attached to RepositoryPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <role name="access">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="506" y="229"/>
+        </userdata>
+        <design-rule name="attached">
+          <userdata key="RuleInfo">
+            <data errMsg="A DataAccessorRoleT must be attached to a port." evaluate="false" label="DataAccessorRoleT must be attached"/>
+          </userdata>
+        </design-rule>
+        <design-rule name="attachedOnlyToDataAccessorPort">
+          <userdata key="RuleInfo">
+            <data errMsg="Any port attached to a DataAccessorRoleT must have type DataAccessorPortT." evaluate="false" label="DataAccessorRoleT must be attached to DataAccessorPortT"/>
+          </userdata>
+        </design-rule>
+      </role>
+      <design-rule name="atLeastOneOfTheseTypesDataAccessorRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="A DataAccessConnT must have at least one DataAccessorRoleT." evaluate="false" label="≥1 DataAccessorRoleT"/>
+        </userdata>
+      </design-rule>
+      <design-rule name="atLeastTheseTypesRepositoryRoleT">
+        <userdata key="RuleInfo">
+          <data errMsg="Does not have roles of type RepositoryRoleT" evaluate="false" label="Has roles of type RepositoryRoleT"/>
+        </userdata>
+      </design-rule>
+    </connector>
+    <connector name="IntentCallResponseConnectorT4">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="349" y="156"/>
+      </userdata>
+      <role name="response">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="404" y="154"/>
+        </userdata>
+      </role>
+      <role name="call">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="294" y="158"/>
+        </userdata>
+      </role>
+    </connector>
+    <connector name="IntentCallResponseConnectorT5">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="451" y="200"/>
+      </userdata>
+      <role name="response">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="451" y="220"/>
+        </userdata>
+      </role>
+      <role name="call">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="450" y="180"/>
+        </userdata>
+      </role>
+    </connector>
+    <connector name="ImplicitIntentBus">
+      <userdata key="vis-information">
+        <data rotation="0.0" x="345" y="352">
+          <visualization>
+            <visualization hideFromPalette="false" type="CONNECTOR">
+              <shape visualizationStrategyKey="org.acmestudio.ui.visualization.BusVisualizationStrategy">
+                <fillColor blue="192" green="151" red="184"/>
+                <size height="30" width="300"/>
+              </shape>
+              <label rotation="0">
+                <labelColor/>
+              </label>
+              <font/>
+              <representation>
+                <data>
+                  <attribute key="repPortSize" type="string" val="ORIGINAL"/>
+                </data>
+              </representation>
+              <extras>
+                <attribute key="BUSPOINTS" type="pointlist">
+                  <points>
+                    <point x="57" y="352"/>
+                    <point x="1141" y="352"/>
+                  </points>
+                </attribute>
+                <attribute h="-1" key="BWIDTH" type="dimension" w="30"/>
+              </extras>
+              <restrictRoleType allowedTypes="" on="false"/>
+              <forceRoleRoute>
+                <roleRouteRule roleType="PublisherRoleT" route="ELBOW"/>
+                <roleRouteRule roleType="SubscriberRoleT" route="ELBOW"/>
+              </forceRoleRoute>
+              <defaultRoleCount value="0"/>
+              <autoCenterBinaryConnector on="false"/>
+            </visualization>
+          </visualization>
+        </data>
+      </userdata>
+      <role name="ImplicitIntentBroadcastAnnounceRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="252" y="184">
+            <bendpoints>
+              <point x="251" y="351"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="ImplicitIntentBroadcastReceiveRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="237" y="184">
+            <bendpoints>
+              <point x="237" y="352"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="ImplicitIntentBroadcastReceiveRoleT1">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="456" y="270">
+            <bendpoints>
+              <point x="456" y="352"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="ImplicitIntentBroadcastReceiveRoleT2">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="1103" y="294">
+            <bendpoints>
+              <point x="1102" y="351"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="r_ImplicitIntentBroadcastReceiveRoleT">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="775" y="100">
+            <bendpoints>
+              <point x="774" y="351"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="r_ImplicitIntentBroadcastReceiveRoleT0">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="824" y="171">
+            <bendpoints>
+              <point x="823" y="351"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="r_ImplicitIntentBroadcastReceiveRoleT1">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="884" y="233">
+            <bendpoints>
+              <point x="883" y="351"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="r_ImplicitIntentBroadcastReceiveRoleT2">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="1052" y="230">
+            <bendpoints>
+              <point x="1052" y="352"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="r_ImplicitIntentBroadcastReceiveRoleT3">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="985" y="163">
+            <bendpoints>
+              <point x="985" y="352"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="r_ImplicitIntentBroadcastReceiveRoleT4">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="949" y="100">
+            <bendpoints>
+              <point x="948" y="351"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+      <role name="r_ImplicitIntentBroadcastReceiveRoleT5">
+        <userdata key="vis-information">
+          <data category="role" rotation="0.0" x="77" y="269">
+            <bendpoints>
+              <point x="76" y="351"/>
+            </bendpoints>
+          </data>
+        </userdata>
+      </role>
+    </connector>
+  </system>
+</AcmeModel>
