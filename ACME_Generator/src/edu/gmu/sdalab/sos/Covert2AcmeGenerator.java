@@ -29,8 +29,7 @@ import freemarker.template.TemplateExceptionHandler;
 import freemarker.template.Version;
 
 /**
- * @author Alireza Sadeghi
- * SDA Lab
+ * @author Alireza Sadeghi SDA Lab
  *
  */
 public class Covert2AcmeGenerator {
@@ -106,7 +105,7 @@ public class Covert2AcmeGenerator {
 				targetComponents.add(intent.getComponent());
 		for (Component c : application.getMergedComponents())
 			processComponent(c);
-		app.put("appName", application.getPackageName());
+		app.put("appName", application.getFullName());
 		app.put("usesPerms", application.getUsesPermissions());
 		app.put("components", components);
 		app.put("connectors", connectors);
@@ -124,12 +123,13 @@ public class Covert2AcmeGenerator {
 		component.put("typeName", type.title);
 		component.put("name", c.getSimpleName());
 		component.put("class", c.getName());
-		// TODO Exported
+		// TODO Explicitly Exported
 		component.put("exported", c.isExportedComponent());
 		if (type == TYPE.PROVIDER) {
 			component.put("readPermission", c.getReadPrm());
 			component.put("writePermission", c.getWritePrm());
-			component.put("ContentProviderResponsePortT", CONTENT_PROVIDER_COMPONENT_RESPONSE_PORT_NAME);
+			//TODO Content provider Entry points 
+			//component.put("ContentProviderResponsePortT", CONTENT_PROVIDER_COMPONENT_RESPONSE_PORT_NAME);
 		} else {
 			component.put("permission", c.getPermissionsStr());
 		}
@@ -148,7 +148,7 @@ public class Covert2AcmeGenerator {
 			attachPorts(c.getSimpleName(), IMPLICIT_INTENT_COMPONENT_BROADCAST_RECEIVE_PORT_NAME, IMPLICIT_INTENT_BUS_NAME, responseConnector);
 		}
 		processIntents(component, c);
-		processProviders(component, c);
+		//processProviders(component, c);
 		components.add(component);
 	}
 
@@ -158,6 +158,8 @@ public class Covert2AcmeGenerator {
 		Set<Intent> addedIntents = new HashSet<>();
 		for (Intent i : application.getNewIntentsByComponents(c)) {
 			if (!new NoFilter().shouldNotFilter(i))
+				continue;
+			if (!(i.hasValidReceiverComponent(application.getComponents()) && i.hasValidSenderComponent(application.getComponents())))
 				continue;
 			if (containsIntent(i, addedIntents))
 				continue;
@@ -188,6 +190,7 @@ public class Covert2AcmeGenerator {
 		component.put("implicitIntentCalls", implicitIntentCalls);
 	}
 
+	//TODO Content Provider calls
 	private void processProviders(HashMap<String, Object> component, Component c) {
 		List<String> providerCalls = new ArrayList<>();
 		for (ContentProvider p : application.getProvierByComponents(c)) {
@@ -198,9 +201,7 @@ public class Covert2AcmeGenerator {
 					CONTENT_PROVIDER_CONNECTOR_REQUEST_PORT);
 			attachPorts(p.getSimpleCaller(), requestProvider, connectorName, CONTENT_PROVIDER_CONNECTOR_REQUEST_PORT);
 			// TODO Add content provider repository
-			// attachPorts(p.getRepository(),
-			// CONTENT_PROVIDER_COMPONENT_RESPONSE_PORT_NAME, connectorName,
-			// CONTENT_PROVIDER_CONNECTOR_RESPONSE_PORT);
+			attachPorts(p.getRepository(), CONTENT_PROVIDER_COMPONENT_RESPONSE_PORT_NAME, connectorName, CONTENT_PROVIDER_CONNECTOR_RESPONSE_PORT);
 		}
 		component.put("providerCalls", providerCalls);
 	}

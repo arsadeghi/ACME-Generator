@@ -8,6 +8,6 @@
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="edu.gmu.sdalab.sos.Covert2AcmeGenerator"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="/Users/alireza/Documents/GMU/MobileSercurity/Tools/ACME/apps/com_fsck_k9_22004.xml&#10;/Users/alireza/Documents/GMU/MobileSercurity/Tools/ACME/output&#10;/Users/alireza/Documents/GMU/MobileSercurity/Tools/ACME/resources/templates"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="/Users/alireza/Documents/GMU/MobileSercurity/Tools/ACME-Generator/Executable/apps/com_fsck_k9_22004.xml&#10;/Users/alireza/Documents/GMU/MobileSercurity/Tools/ACME-Generator/Executable/apps/&#10;/Users/alireza/Documents/GMU/MobileSercurity/Tools/ACME-Generator/Executable/resources/templates"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ACME_Generator"/>
 </launchConfiguration>

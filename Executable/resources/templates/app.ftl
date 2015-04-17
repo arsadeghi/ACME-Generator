@@ -32,9 +32,11 @@ system ${appName} : Android = new Android extended with {
         </#if><#if intent.componentReference??>property componentReference = "${intent.componentReference}";</#if>
       };
       </#list>
+      <#if component.providerCalls??>
       <#list component.providerCalls as providerCall>
       port ${providerCall} : ContentProviderCallPortT = new ContentProviderCallPortT;
       </#list>
+      </#if>
    };
    </#list>
    
@@ -73,7 +75,6 @@ system ${appName} : Android = new Android extended with {
    <#list attachments as attachment>
    attachment ${attachment.from} to ${attachment.to};
    </#list>
-       
    
    group ${appName} : AndroidApplicationGroupT = new AndroidApplicationGroupT extended with {
     property usesPermissions = {
